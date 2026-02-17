@@ -28,7 +28,7 @@ export default function Header() {
               </a>
             </li>
           </ul>
-          <ul>
+          <ul className={style.header__auth}>
             <li className={style.header__item}>
               <a className={style.header__link} href="#">
                 Вхід
