@@ -1,10 +1,11 @@
 import reviewsStar from "../../images/review-star.svg";
 import categorieArrow from "../../images/arrow.png";
+import { Container } from "../Container/ContainerLayout.jsx";
 
 export default function Rewiews() {
   return (
     <section>
-      <div>
+      <Container>
         <ul>
           <li>
             <div>
@@ -92,7 +93,7 @@ export default function Rewiews() {
             </button>
           </li>
         </ul>
-      </div>
+      </Container>
     </section>
   );
 }

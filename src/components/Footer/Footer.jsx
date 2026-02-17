@@ -1,7 +1,8 @@
 import logo from "../../assets/logo.svg";
+import { Container } from "../Container/ContainerLayout.jsx";
 export default function Footer() {
   return (
-    <footer>
+    <Container>
       <div className="container">
         <a href="#">
           <img src={logo} alt="logo" />
@@ -44,6 +45,6 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-    </footer>
+    </Container>
   );
 }

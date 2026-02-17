@@ -1,14 +1,15 @@
 import React from "react";
+import { Container } from "../Container/ContainerLayout.jsx";
 
 export default function ProductsItem() {
   return (
     <li>
       <article>
-        <div className="">
+        <div>
           <img src="" alt="" />
         </div>
 
-        <div className="">
+        <div>
           <span></span>
 
           <h3>Еспресо Класік</h3>

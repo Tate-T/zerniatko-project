@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import ProductsList from "../../components/ProductsList/ProductsList";
+import { Container } from "../../components/Container/ContainerLayout.jsx";
 
 export default function ProductsPage() {
   return (
@@ -9,7 +10,7 @@ export default function ProductsPage() {
       <Header />
       <main>
         <section>
-          <div className="container">
+          <Container>
             <aside>
               <ul>
                 <li>
@@ -65,7 +66,7 @@ export default function ProductsPage() {
               </ul>
             </aside>
             <ProductsList />
-          </div>
+          </Container>
         </section>
       </main>
       <Footer />

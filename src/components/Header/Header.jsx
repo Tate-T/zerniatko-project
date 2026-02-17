@@ -1,38 +1,50 @@
 import logo from "../../assets/logo.svg";
 import button from "../../assets/button.svg";
+import style from "./Header.module.css";
+import { Container } from "../Container/ContainerLayout.jsx";
 
 export default function Header() {
   return (
-    <header>
-      <div>
-        <nav>
-          <a href="#">
-            <img src={logo} alt="Logo" />
+    <header className={style.header}>
+      <Container>
+        <nav className={style.header__navigation}>
+          <a href="#" className={style.header__logo}>
+            <img className={style.header__icon} src={logo} alt="Logo" />
           </a>
-          <ul>
-            <li>
-              <a href="#">Головна</a>
+          <ul className={style.header__list}>
+            <li className={style.header__item}>
+              <a className={style.header__link} href="#">
+                Головна
+              </a>
             </li>
-            <li>
-              <a href="#">Товари</a>
+            <li className={style.header__item}>
+              <a className={style.header__link} href="#">
+                Товари
+              </a>
             </li>
-            <li>
-              <a href="#">Категорії</a>
+            <li className={style.header__item}>
+              <a className={style.header__link} href="#">
+                Категорії
+              </a>
             </li>
           </ul>
           <ul>
-            <li>
-              <a href="#">Вхід</a>
+            <li className={style.header__item}>
+              <a className={style.header__link} href="#">
+                Вхід
+              </a>
             </li>
-            <li>
-              <a href="#">Реєстрація</a>
+            <li className={style.header__item}>
+              <a className={style.header__link} href="#">
+                Реєстрація
+              </a>
             </li>
           </ul>
         </nav>
-        <button>
-          <img src={button} alt="корзина" />
+        <button className={style.header__button}>
+          <img className={style.header__basket} src={button} alt="корзина" />
         </button>
-      </div>
+      </Container>
     </header>
   );
 }

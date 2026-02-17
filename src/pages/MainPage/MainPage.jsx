@@ -3,7 +3,7 @@ import Rewiews from "../../components/Rewiews/Reviews";
 import ProductsList from "../../components/ProductsList/ProductsList";
 import Footer from "../../components/Footer/Footer";
 import CategoriesList from "../../components/CategoriesList/CategoriesList";
-
+import { Container } from "../../components/Container/ContainerLayout.jsx";
 
 import heroImage from "../../assets/hero.png";
 import categorieArrow from "../../images/arrow.png";
@@ -14,7 +14,7 @@ export default function MainPage() {
       <Header />
       <main>
         <section>
-          <div className="container">
+          <Container>
             <h1>Зернятко — твій шлях до справжньої кави</h1>
             <p>
               Ми створили місце, де кожен знайде все для свого кавового ритуалу:
@@ -30,20 +30,20 @@ export default function MainPage() {
                 <a href="#">Дослідити категорії</a>
               </li>
             </ul>
-            <div className="">
+            <div>
               <img src={heroImage} alt="coffee" />
             </div>
-          </div>
+          </Container>
         </section>
         <section>
-          <div className="container">
+          <Container>
             <h2>Популярні товари</h2>
             <a href="#">Всі товари</a>
             <ProductsList />
-          </div>
+          </Container>
         </section>
         <section>
-          <div className="container">
+          <Container>
             <h2>Чому варто обрати Зернятко?</h2>
             <ul>
               <li>
@@ -79,16 +79,16 @@ export default function MainPage() {
                 </article>
               </li>
             </ul>
-          </div>
+          </Container>
         </section>
         <section>
-          <div>
+          <Container>
             <h2>Популярні категорії</h2>
             <button>
               {" "}
               <img src={categorieArrow} alt="стрілочка для перелистування" />
             </button>
-            <CategoriesList/>
+            <CategoriesList />
             <button>
               <img src={categorieArrow} alt="стрілочка для перелистування" />
             </button>
@@ -109,7 +109,7 @@ export default function MainPage() {
                 <button></button>
               </li>
             </ul>
-          </div>
+          </Container>
         </section>
         <Rewiews />
       </main>
