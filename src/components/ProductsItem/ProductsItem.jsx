@@ -1,28 +1,31 @@
 import React from "react";
 import { Container } from "../Container/ContainerLayout.jsx";
+import styles from "./ProductsItem.module.css";
 
 export default function ProductsItem() {
   return (
-    <li>
+    <li className={styles.item}>
       <article>
-        <div>
-          <img src="" alt="" />
+        <div className={styles.imageWrapper}>
+          <img src="" alt="" className={styles.image} />
         </div>
 
-        <div>
-          <span></span>
+        <div className={styles.content}>
+          <span className={styles.rating}></span>
 
-          <h3>Еспресо Класік</h3>
+          <h3 className={styles.name}>Еспресо Класік</h3>
 
-          <p>
+          <p className={styles.description}>
             Суміш арабіки та робусти з насиченим смаком і нотами темного
             шоколаду.
           </p>
 
-          <span>280грн</span>
+          <span className={styles.price}>280грн</span>
         </div>
 
-        <a href="#">Детальніше</a>
+        <a href="#" className={styles.link}>
+          Детальніше
+        </a>
       </article>
     </li>
   );
