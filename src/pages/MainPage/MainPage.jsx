@@ -9,6 +9,7 @@ import heroImage from "../../assets/hero.png";
 import categorieArrow from "../../images/arrow.png";
 
 import heroStyles from "./HeroSection.module.css";
+import popularStyles from "./PopularProducts.module.css";
 
 export default function MainPage() {
   return (
@@ -51,11 +52,52 @@ export default function MainPage() {
             </div>
           </Container>
         </section>
-        <section>
+        <section className={popularStyles.popular}>
           <Container>
-            <h2>Популярні товари</h2>
-            <a href="#">Всі товари</a>
-            <ProductsList />
+            <div className={popularStyles.popular__header}>
+              <h2 className={popularStyles.popular__title}>Популярні товари</h2>
+              <a href="#" className={popularStyles.popular__link}>
+                Всі товари
+              </a>
+            </div>
+            <div className={popularStyles.popular__slider}>
+              <button className={popularStyles.popular__btn}>
+                <img
+                  src={categorieArrow}
+                  alt="стрілка"
+                  className={popularStyles.popular__btnIcon}
+                />
+              </button>
+              <ProductsList />
+              <button
+                className={`${popularStyles.popular__btn} ${popularStyles.popular__btnRight}`}
+              >
+                <img
+                  src={categorieArrow}
+                  alt="стрілка"
+                  className={popularStyles.popular__btnIcon}
+                />
+              </button>
+              <ul className={popularStyles.popular__dots}>
+                <li>
+                  <button className={popularStyles.popular__dot}></button>
+                </li>
+                <li>
+                  <button className={popularStyles.popular__dot}></button>
+                </li>
+                <li>
+                  <button
+                    className={`${popularStyles.popular__dot} ${popularStyles.popular__dotActive}`}
+                  ></button>
+                </li>
+                <li>
+                  <button className={popularStyles.popular__dot}></button>
+                </li>
+                <li>
+                  <button className={popularStyles.popular__dot}></button>
+                </li>
+              </ul>
+            </div>
           </Container>
         </section>
         <section>

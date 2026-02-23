@@ -1,0 +1,93 @@
+.popular {
+  background-color: #fef3db;
+  padding: 60px 0;
+}
+
+.popular__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.popular__title {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.popular__link {
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #000;
+  padding: 6px 12px;
+  border-radius: 100px;
+  width: 108px;
+  height: 36px;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.popular__slider {
+  position: relative;
+}
+
+.popular__btn {
+  position: absolute;
+  top: 35%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #fbc74c;
+  border: solid 1px #fef9ed;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.popular__btn:first-child {
+  left: -24px;
+}
+
+.popular__btnRight {
+  right: -24px;
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.popular__btnIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.popular__dots {
+  list-style: none;
+  padding: 0;
+  margin: 40px 0 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+}
+
+.popular__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.popular__dotActive {
+  width: 12px;
+  height: 12px;
+  background-color: #000;
+}
