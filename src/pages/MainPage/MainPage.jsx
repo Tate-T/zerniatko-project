@@ -8,30 +8,46 @@ import { Container } from "../../components/Container/ContainerLayout.jsx";
 import heroImage from "../../assets/hero.png";
 import categorieArrow from "../../images/arrow.png";
 
+import heroStyles from "./HeroSection.module.css";
+
 export default function MainPage() {
   return (
     <>
       <Header />
       <main>
-        <section>
+        <section className={heroStyles.hero}>
           <Container>
-            <h1>Зернятко — твій шлях до справжньої кави</h1>
-            <p>
-              Ми створили місце, де кожен знайде все для свого кавового ритуалу:
-              від зерен преміум-якості до стильних аксесуарів для приготування.
-              Почни день із натхненням та обирай товари, що розкривають
-              унікальний смак твоєї кави.
-            </p>
-            <ul>
-              <li>
-                <a href="#">До товарів</a>
-              </li>
-              <li>
-                <a href="#">Дослідити категорії</a>
-              </li>
-            </ul>
-            <div>
-              <img src={heroImage} alt="coffee" />
+            <div className={heroStyles.hero__inner}>
+              <div className={heroStyles.hero__content}>
+                <h1 className={heroStyles.hero__title}>
+                  Зернятко — твій шлях до справжньої кави
+                </h1>
+                <p className={heroStyles.hero__description}>
+                  Ми створили місце, де кожен знайде все для свого кавового
+                  ритуалу: від зерен преміум-якості до стильних аксесуарів для
+                  приготування. Почни день із натхненням та обирай товари, що
+                  розкривають унікальний смак твоєї кави.
+                </p>
+                <ul className={heroStyles.hero__links}>
+                  <li>
+                    <a href="#" className={heroStyles.hero__link}>
+                      До товарів
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className={heroStyles.hero__linkOutline}>
+                      Дослідити категорії
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div className={heroStyles.hero__imageWrapper}>
+                <img
+                  src={heroImage}
+                  alt="coffee"
+                  className={heroStyles.hero__image}
+                />
+              </div>
             </div>
           </Container>
         </section>
