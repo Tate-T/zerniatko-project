@@ -4,6 +4,7 @@ import ProductsList from "../../components/ProductsList/ProductsList";
 import Footer from "../../components/Footer/Footer";
 import CategoriesList from "../../components/CategoriesList/CategoriesList";
 import { Container } from "../../components/Container/ContainerLayout.jsx";
+import PopularCategories from "../../components/PopularCategories/PopularCategories.jsx";
 
 import heroImage from "../../assets/hero.png";
 import categorieArrow from "../../images/arrow.png";
@@ -139,36 +140,7 @@ export default function MainPage() {
             </ul>
           </Container>
         </section>
-        <section>
-          <Container>
-            <h2>Популярні категорії</h2>
-            <button>
-              {" "}
-              <img src={categorieArrow} alt="стрілочка для перелистування" />
-            </button>
-            <CategoriesList />
-            <button>
-              <img src={categorieArrow} alt="стрілочка для перелистування" />
-            </button>
-            <ul>
-              <li>
-                <button></button>
-              </li>
-              <li>
-                <button></button>
-              </li>
-              <li>
-                <button></button>
-              </li>
-              <li>
-                <button></button>
-              </li>
-              <li>
-                <button></button>
-              </li>
-            </ul>
-          </Container>
-        </section>
+        <PopularCategories />
         <Rewiews />
       </main>
       <Footer />
