@@ -11,6 +11,7 @@ import categorieArrow from "../../images/arrow.png";
 
 import heroStyles from "./HeroSection.module.css";
 import popularStyles from "./PopularProducts.module.css";
+import advantagesStyles from "./Advantages.module.css";
 
 export default function MainPage() {
   return (
@@ -101,37 +102,45 @@ export default function MainPage() {
             </div>
           </Container>
         </section>
-        <section>
+        <section className={advantagesStyles.why}>
           <Container>
-            <h2>Чому варто обрати Зернятко?</h2>
-            <ul>
-              <li>
+            <h2 className={advantagesStyles.why__title}>
+              Чому варто обрати Зернятко?
+            </h2>
+            <ul className={advantagesStyles.why__list}>
+              <li className={advantagesStyles.why__item}>
                 <article>
-                  <img src="" alt="" />
-                  <h3>Смак і якість</h3>
-                  <p>
+                  <img src="" alt="" className={advantagesStyles.why__icon} />
+                  <h3 className={advantagesStyles.why__itemTitle}>
+                    Смак і якість
+                  </h3>
+                  <p className={advantagesStyles.why__itemText}>
                     Лише відібрані кавові зерна та товари від перевірених
                     виробників.
                   </p>
                 </article>
               </li>
-              <li>
+              <li className={advantagesStyles.why__item}>
                 {" "}
                 <article>
-                  <img src="" alt="" />
-                  <h3>Усе для кавового ритуалу</h3>
-                  <p>
+                  <img src="" alt="" className={advantagesStyles.why__icon} />
+                  <h3 className={advantagesStyles.why__itemTitle}>
+                    Усе для кавового ритуалу
+                  </h3>
+                  <p className={advantagesStyles.why__itemText}>
                     Від турки до кавомолки — ми зібрали повний набір для
                     ідеальної чашки.
                   </p>
                 </article>
               </li>
-              <li>
+              <li className={advantagesStyles.why__item}>
                 {" "}
                 <article>
-                  <img src="" alt="" />
-                  <h3>Натхнення щодня</h3>
-                  <p>
+                  <img src="" alt="" className={advantagesStyles.why__icon} />
+                  <h3 className={advantagesStyles.why__itemTitle}>
+                    Натхнення щодня
+                  </h3>
+                  <p className={advantagesStyles.why__itemText}>
                     Кава, яка підкреслить твій настрій та стане головною
                     частиною ранкової звички.
                   </p>
