@@ -1,95 +1,184 @@
 import reviewsStar from "../../images/review-star.svg";
 import categorieArrow from "../../images/arrow.png";
 import { Container } from "../Container/ContainerLayout.jsx";
+import reviewsStyles from "./Reviews.module.css";
 
 export default function Rewiews() {
   return (
-    <section>
+    <section className={reviewsStyles.reviews}>
       <Container>
-        <ul>
-          <li>
-            <div>
-              <img src={reviewsStar} alt="star" />
-              <img src={reviewsStar} alt="star" />
-              <img src={reviewsStar} alt="star" />
-              <img src={reviewsStar} alt="star" />
-              <img src={reviewsStar} alt="star" />
+        <h2 className="reviews_title">Останні відгуки</h2>
+        <ul className={reviewsStyles.reviews_holder}>
+          <li className={reviewsStyles.reviews_card}>
+            <div className={reviewsStyles.star_holder}>
+              <img
+                className={reviewsStyles.card_star}
+                src={reviewsStar}
+                alt="star"
+              />
+              <img
+                className={reviewsStyles.card_star}
+                src={reviewsStar}
+                alt="star"
+              />
+              <img
+                className={reviewsStyles.card_star}
+                src={reviewsStar}
+                alt="star"
+              />
+              <img
+                className={reviewsStyles.card_star}
+                src={reviewsStar}
+                alt="star"
+              />
+              <img
+                className={reviewsStyles.card_star}
+                src={reviewsStar}
+                alt="star"
+              />
             </div>
 
-            <p>
+            <p className={reviewsStyles.reviews_card_text}>
               Дуже сподобалася ця кава! Смак насичений, з легкою гірчинкою й
               ароматом шоколаду. Ідеально підходить для ранкового еспресо.
             </p>
 
-            <p>Олена Коваль</p>
+            <p className={reviewsStyles.reviews_card_name}>Олена Коваль</p>
 
-            <p>Еспресо Класік</p>
+            <p className={reviewsStyles.reviews_card_product}>Еспресо Класік</p>
           </li>
-          <li>
-            <div>
-              <img src={reviewsStar} alt="star" />
-              <img src={reviewsStar} alt="star" />
-              <img src={reviewsStar} alt="star" />
-              <img src={reviewsStar} alt="star" />
-              <img src={reviewsStar} alt="star" />
+          <li className={reviewsStyles.reviews_card}>
+            <div className={reviewsStyles.star_holder}>
+              <img
+                className={reviewsStyles.card_star}
+                src={reviewsStar}
+                alt="star"
+              />
+              <img
+                className={reviewsStyles.card_star}
+                src={reviewsStar}
+                alt="star"
+              />
+              <img
+                className={reviewsStyles.card_star}
+                src={reviewsStar}
+                alt="star"
+              />
+              <img
+                className={reviewsStyles.card_star}
+                src={reviewsStar}
+                alt="star"
+              />
+              <img
+                className={reviewsStyles.card_star}
+                src={reviewsStar}
+                alt="star"
+              />
             </div>
 
-            <p>
+            <p className={reviewsStyles.reviews_card_text}>
               Френч-прес якісний і зручний у використанні. Скло міцне, фільтр
               добре працює, кава виходить ароматною й чистою. Точно вартий своєї
               ціни.
             </p>
 
-            <p>Ігор Петров</p>
+            <p className={reviewsStyles.reviews_card_name}>Ігор Петров</p>
 
-            <p>Френч-прес Classic 600 мл</p>
+            <p className={reviewsStyles.reviews_card_product}>
+              Френч-прес Classic 600 мл
+            </p>
           </li>
-          <li>
-            <div>
-              <img src={reviewsStar} alt="star" />
-              <img src={reviewsStar} alt="star" />
-              <img src={reviewsStar} alt="star" />
-              <img src={reviewsStar} alt="star" />
-              <img src={reviewsStar} alt="star" />
+          <li className={reviewsStyles.reviews_card}>
+            <div className={reviewsStyles.star_holder}>
+              <img
+                className={reviewsStyles.card_star}
+                src={reviewsStar}
+                alt="star"
+              />
+              <img
+                className={reviewsStyles.card_star}
+                src={reviewsStar}
+                alt="star"
+              />
+              <img
+                className={reviewsStyles.card_star}
+                src={reviewsStar}
+                alt="star"
+              />
+              <img
+                className={reviewsStyles.card_star}
+                src={reviewsStar}
+                alt="star"
+              />
+              <img
+                className={reviewsStyles.card_star}
+                src={reviewsStar}
+                alt="star"
+              />
             </div>
 
-            <p>
+            <p className={reviewsStyles.reviews_card_text}>
               Купив для роботи — тримає тепло кілька годин, дизайн
               мінімалістичний і стильний. Дуже зручно брати з собою каву в
               дорогу.
             </p>
 
-            <p>Ігор Шевченко</p>
+            <p className={reviewsStyles.reviews_card_name}>Ігор Шевченко</p>
 
-            <p>Термочашка Зернятко 350 мл</p>
+            <p className={reviewsStyles.reviews_card_product}>
+              Термочашка Зернятко 350 мл
+            </p>
           </li>
         </ul>
-        <ul>
-          <li>
-            <button type="button"></button>
+        <ul className={reviewsStyles.slider_button_list}>
+          <li className={reviewsStyles.slider_button_item}>
+            <button
+              className={reviewsStyles.slider_button}
+              type="button"
+            ></button>
           </li>
-          <li>
-            <button type="button"></button>
+          <li className={reviewsStyles.slider_button_item}>
+            <button
+              className={reviewsStyles.slider_button}
+              type="button"
+            ></button>
           </li>
-          <li>
-            <button type="button"></button>
+          <li className={reviewsStyles.slider_button_item}>
+            <button
+              className={reviewsStyles.slider_button}
+              type="button"
+            ></button>
           </li>
-          <li>
-            <button type="button"></button>
+          <li className={reviewsStyles.slider_button_item}>
+            <button
+              className={reviewsStyles.slider_button}
+              type="button"
+            ></button>
           </li>
-          <li>
-            <button type="button"></button>
+          <li className={reviewsStyles.slider_button_item}>
+            <button
+              className={reviewsStyles.slider_button}
+              type="button"
+            ></button>
           </li>
         </ul>
-        <ul>
-          <li>
-            <button type="button">
-              <img src={categorieArrow} alt="<-" />
+        <ul className={reviewsStyles.slider_arrow_list}>
+          <li className={reviewsStyles.slider_arrow_list_item}>
+            <button className={reviewsStyles.slider_arrow_button} type="button">
+              <img
+                className={reviewsStyles.slider_button_img}
+                src={categorieArrow}
+                alt="<-"
+              />
             </button>
           </li>
-          <li>
-            <button type="button">
-              <img src={categorieArrow} alt="->" />
+          <li className={reviewsStyles.slider_arrow_list_item}>
+            <button className={reviewsStyles.slider_arrow_button} type="button">
+              <img
+                className={reviewsStyles.slider_button_img}
+                src={categorieArrow}
+                alt="->"
+              />
             </button>
           </li>
         </ul>
