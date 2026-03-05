@@ -91,3 +91,43 @@
   height: 12px;
   background-color: #000;
 }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .popular__title {
+    font-size: 36px;
+  }
+
+  .popular__btn:first-child {
+    left: -16px;
+  }
+
+  .popular__btnRight {
+    right: -16px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .popular {
+    padding: 40px 0;
+  }
+
+  .popular__title {
+    font-size: 36px;
+  }
+
+  .popular__btn:first-child {
+    left: -12px;
+  }
+
+  .popular__btnRight {
+    right: -12px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 1024px) {
+  .popular__link {
+    font-size: 14px;
+    width: 97px;
+    height: 33px;
+  }
+}

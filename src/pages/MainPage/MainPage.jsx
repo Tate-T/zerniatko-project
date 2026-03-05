@@ -12,6 +12,9 @@ import categorieArrow from "../../images/arrow.png";
 import heroStyles from "./HeroSection.module.css";
 import popularStyles from "./PopularProducts.module.css";
 import advantagesStyles from "./Advantages.module.css";
+import { FiSun } from "react-icons/fi";
+import { MdOutlineCoffee } from "react-icons/md";
+import { MdOutlineCalendarToday } from "react-icons/md";
 
 export default function MainPage() {
   return (
@@ -110,7 +113,7 @@ export default function MainPage() {
             <ul className={advantagesStyles.why__list}>
               <li className={advantagesStyles.why__item}>
                 <article>
-                  <img src="" alt="" className={advantagesStyles.why__icon} />
+                  <FiSun className={advantagesStyles.why__icon} />
                   <h3 className={advantagesStyles.why__itemTitle}>
                     Смак і якість
                   </h3>
@@ -121,9 +124,8 @@ export default function MainPage() {
                 </article>
               </li>
               <li className={advantagesStyles.why__item}>
-                {" "}
                 <article>
-                  <img src="" alt="" className={advantagesStyles.why__icon} />
+                  <MdOutlineCoffee className={advantagesStyles.why__icon} />
                   <h3 className={advantagesStyles.why__itemTitle}>
                     Усе для кавового ритуалу
                   </h3>
@@ -134,9 +136,10 @@ export default function MainPage() {
                 </article>
               </li>
               <li className={advantagesStyles.why__item}>
-                {" "}
                 <article>
-                  <img src="" alt="" className={advantagesStyles.why__icon} />
+                  <MdOutlineCalendarToday
+                    className={advantagesStyles.why__icon}
+                  />
                   <h3 className={advantagesStyles.why__itemTitle}>
                     Натхнення щодня
                   </h3>
