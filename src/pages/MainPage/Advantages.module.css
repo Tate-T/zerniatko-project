@@ -20,19 +20,19 @@
   gap: 32px;
 }
 
-.why__item {
+.why__item article {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
 .why__icon {
-  width: 37px;
-  height: 37px;
-  object-fit: contain;
+  width: 45px;
+  height: 45px;
 }
 
 .why__itemTitle {
+  font-family: "Nunito Sans", sans-serif;
   font-size: 24px;
   font-weight: 700;
   line-height: 130%;
@@ -40,7 +40,36 @@
 }
 
 .why__itemText {
+  font-family: "Inter", sans-serif;
   font-size: 16px;
   line-height: 150%;
   margin: 0;
+  color: #000;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .why__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .why {
+    padding: 40px 0;
+  }
+
+  .why__list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (min-width: 320px) and (max-width: 1024px) {
+  .why__title {
+    font-size: 36px;
+    margin: 0 0 40px 0;
+  }
+
+  .why__itemText {
+    font-size: 14px;
+  }
 }
