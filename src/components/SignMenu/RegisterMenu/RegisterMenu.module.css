@@ -1,0 +1,51 @@
+.main_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+.choose_sign {
+    display: flex;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+} .choose_sign li {
+    width: 100%;
+} .choose_sign button {
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid black;
+}
+
+.form_container {
+    max-width: 480px;
+    width: 480px;
+}
+
+.sign_form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+} .sign_form p {
+    padding-bottom: 10px;
+} .sign_form input {
+  width: 100%;
+  height: 48px;
+  border-radius: 16px;
+} .sign_form h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    font-size: 48px;
+}
+.submit_button {
+    border-radius: 100px;
+    width: 100%;
+    height: 36px;
+    background-color: #FBC74C;
+}
