@@ -5,12 +5,14 @@ import viteLogo from "/vite.svg";
 import MainPage from "./pages/MainPage/MainPage";
 import CategoriePage from "./pages/СategoriesPage/CategoriesPage";
 import ProductsPage from "./pages/ProductsPage/ProductsPage";
+import RegisterPage from "./pages/RegisterPage/RegisterPage";
 function App() {
   return (
     <>
       <MainPage />
       <CategoriePage />
       <ProductsPage />
+      <RegisterPage />
     </>
   );
 }
