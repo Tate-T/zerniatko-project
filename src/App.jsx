@@ -12,7 +12,7 @@ function App() {
       <MainPage />
       <CategoriePage />
       <ProductsPage />
-      <RegisterPage />
+      <RegisterPage/>
     </>
   );
 }
