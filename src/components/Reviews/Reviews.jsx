@@ -7,27 +7,25 @@ import { RewiewsModal } from "./modalRewiews";
 
 export class Rewiews extends Component {
   state = {
-    openModal: false,
+    modal: false,
   };
-  openModal = () => {
-    this.setState((prevState) => {
-      openModal: !prevState.openModal;
-    });
+  modModal = () => {
+    this.setState((prevState) => ({
+      modal: !prevState.modal
+    }));
   };
-  closeModal = () => {
-    this.setState((prevState) => {
-      openModal: !prev;
-    });
-  };
+  
   render() {
     return (
       <section className={styles.section}>
+        
         <Container>
-          {}
-          <h2 className={styles.sectionTitle}>Останні відгуки</h2>
-
-          <RewiewsModal />
-          {}
+          { }
+          <div className={styles.headTitle}>
+            <h2 className={styles.sectionTitle}>Останні відгуки</h2>
+            <button onClick={this.modModal} className={styles.write_review}>Залишити відгук</button>
+          </div>
+          {this.state.modal && ( <RewiewsModal onClose={this.modModal} /> )}
           <ul className={styles.reviewsList}>
             <li className={styles.reviewCard}>
               <div className={styles.stars}>
