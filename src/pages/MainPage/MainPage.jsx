@@ -1,5 +1,5 @@
 import Header from "../../components/Header/Header";
-import Rewiews from "../../components/Reviews/Reviews.jsx";
+import { Rewiews } from "../../components/Reviews/Reviews.jsx";
 import ProductsList from "../../components/ProductsList/ProductsList";
 import Footer from "../../components/Footer/Footer";
 import CategoriesList from "../../components/CategoriesList/CategoriesList";
