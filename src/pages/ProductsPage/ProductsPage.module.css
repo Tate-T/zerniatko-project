@@ -227,3 +227,78 @@
 .catalog__products {
   flex-grow: 1;
 }
+
+/* Активний пункт категорії */
+.category_list__item {
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.category_list__item.is_active {
+  color: #fbc74c; /* Жовтий колір як на кнопці */
+  font-weight: 700;
+}
+
+/* Кастомний чекбокс */
+.brand_list__checkbox {
+  width: 18px;
+  height: 18px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.brand_list__checkbox.checked {
+  background-color: #fbc74c;
+  border-color: #fbc74c;
+  color: #fff;
+}
+
+.brand_list__item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+
+.price_range__input {
+  width: 100%;
+  cursor: pointer;
+}
+
+.category_list__item {
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.category_list__item.is_active {
+  color: #c9a050; /* Твій акцентний колір */
+  font-weight: bold;
+}
+
+.brand_list__checkbox {
+  width: 18px;
+  height: 18px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.brand_list__checkbox.checked {
+  background-color: #c9a050;
+  border-color: #c9a050;
+  color: white;
+}
+
+.brand_list__item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
