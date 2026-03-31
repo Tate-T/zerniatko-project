@@ -1,304 +1,142 @@
 .catalog {
-  background-color: #fdf0e4;
+  background-color: #fff9e5;
   min-height: 100vh;
-}
-
-.catalog__section {
-  padding: clamp(20px, 5vw, 40px) 0;
+  padding: 40px 0;
+  font-family: sans-serif;
 }
 
 .catalog__title {
-  font-size: clamp(28px, 8vw, 48px);
+  font-size: 48px;
   font-weight: 700;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
+  color: #000;
 }
 
 .catalog__layout {
-  display: flex;
+  display: grid;
+  grid-template-columns: 350px 1fr;
   gap: 40px;
 }
 
 .filters {
-  width: 280px;
-  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .filter_group {
-  margin-bottom: 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-.filter_group__header {
+.filter_header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 12px;
+  align-items: baseline;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 10px;
 }
 
-.filter_group__title {
-  font-size: 18px;
-  font-weight: 700;
+.filter_header h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
 }
 
-.filter_group__clear {
+.filter_header button {
   background: none;
   border: none;
-  color: #666;
-  font-size: 12px;
-  text-decoration: underline;
-  cursor: pointer;
-  padding: 0;
-}
-
-.filter_group__count {
-  font-size: 13px;
   color: #333;
-  margin-bottom: 15px;
-  display: block;
-}
-
-.category_list {
-  list-style: none;
-  padding: 0;
-}
-
-.category_list__item {
-  padding: 6px 0;
-  font-size: 15px;
-  color: #1a1a1a;
   cursor: pointer;
+  font-size: 14px;
+  text-decoration: none;
 }
 
-.is_active {
-  font-weight: 800;
+.count_info {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+.category_nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.category_nav button {
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 0;
+  font-size: 18px;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.active_cat {
+  font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 4px;
 }
 
 .brand_list {
-  list-style: none;
-  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.brand_list__item {
+.brand_item {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
-  font-size: 14px;
+  gap: 10px;
+  font-size: 18px;
   cursor: pointer;
-  user-select: none;
 }
 
-.brand_list__checkbox {
-  width: 18px;
-  height: 18px;
-  border: 1px solid #d1b8a5;
-  background: #fff;
-  margin-right: 12px;
+.brand_item input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  appearance: none;
+  border: 1px solid #ccc;
   border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.is_checked {
-  background-color: #6d4c41;
-  border-color: #6d4c41;
-}
-
-.checkmark {
-  color: white;
-  font-size: 11px;
-}
-
-.price_range {
-  position: relative;
-  margin-top: 15px;
-}
-
-.price_range__input {
-  width: 100%;
-  position: absolute;
-  top: -5px;
-  left: 0;
-  opacity: 0;
+  background-color: #fff;
   cursor: pointer;
-  z-index: 10;
-}
-
-.price_range__track_bg {
-  height: 2px;
-  background: #e0c8b0;
   position: relative;
 }
 
-.price_range__track_fill {
-  height: 100%;
-  background: #000;
+.brand_item input[type="checkbox"]:checked {
+  background-color: #f8d7da;
+  border-color: #f5b7b1;
 }
 
-.price_range__thumb {
-  width: 14px;
-  height: 14px;
-  background: #fff;
-  border: 2px solid #000;
-  border-radius: 50%;
+.brand_item input[type="checkbox"]:checked::after {
+  content: "✓";
   position: absolute;
   top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  pointer-events: none;
+  font-size: 14px;
+  color: #333;
 }
 
-.price_range__values {
+.price_labels {
   display: flex;
   justify-content: space-between;
-  margin-top: 15px;
-  font-size: 14px;
+  font-size: 18px;
+  margin-top: 5px;
 }
 
-.price_current {
-  font-weight: 700;
-}
-
-.mobile_select {
-  display: none;
-}
-
-@media (max-width: 768px) {
-  .catalog__layout {
-    flex-direction: column;
-  }
-
-  .filters {
-    width: 100%;
-  }
-
-  .mobile_select {
-    display: flex;
-    justify-content: center;
-    padding: 12px;
-    border: 1px solid #e0c8b0;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.4);
-    cursor: pointer;
-    font-weight: 600;
-    margin-bottom: 10px;
-  }
-
-  .category_list {
-    display: none;
-    background: #fdf0e4;
-    border: 1px solid #e0c8b0;
-    border-radius: 12px;
-    max-height: 160px;
-    overflow-y: auto;
-    padding: 15px;
-    margin-bottom: 20px;
-  }
-
-  .category_list.is_open {
-    display: block;
-  }
-
-  .category_list::-webkit-scrollbar {
-    width: 6px;
-  }
-  .category_list::-webkit-scrollbar-thumb {
-    background: #6d4c41;
-    border-radius: 10px;
-  }
-  .category_list::-webkit-scrollbar-track {
-    background: #f1dcc9;
-  }
-}
-
-@media (max-width: 360px) {
-  .catalog__section {
-    padding: 15px 0;
-  }
-  .filter_group__title {
-    font-size: 16px;
-  }
-  .brand_list__item {
-    font-size: 13px;
-  }
-}
-
-.catalog__products {
-  flex-grow: 1;
-}
-
-/* Активний пункт категорії */
-.category_list__item {
-  cursor: pointer;
-  transition: color 0.3s;
-}
-.category_list__item.is_active {
-  color: #fbc74c; /* Жовтий колір як на кнопці */
-  font-weight: 700;
-}
-
-/* Кастомний чекбокс */
-.brand_list__checkbox {
-  width: 18px;
-  height: 18px;
-  border: 1px solid #ccc;
-  margin-right: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-size: 12px;
-}
-
-.brand_list__checkbox.checked {
-  background-color: #fbc74c;
-  border-color: #fbc74c;
-  color: #fff;
-}
-
-.brand_list__item {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  margin-bottom: 8px;
-}
-
-.price_range__input {
+input[type="range"] {
   width: 100%;
   cursor: pointer;
+  accent-color: #000;
 }
 
-.category_list__item {
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.category_list__item.is_active {
-  color: #c9a050; /* Твій акцентний колір */
-  font-weight: bold;
-}
-
-.brand_list__checkbox {
-  width: 18px;
-  height: 18px;
-  border: 1px solid #ccc;
-  margin-right: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-}
-
-.brand_list__checkbox.checked {
-  background-color: #c9a050;
-  border-color: #c9a050;
-  color: white;
-}
-
-.brand_list__item {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  margin-bottom: 8px;
+.products_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
 }
