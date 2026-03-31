@@ -38,8 +38,8 @@ export class RewiewsModal extends Component {
 
   render() {
     return (
-      <div className={styled.backdrop} onClick={this.modModal}>
-        <div className={styled.modal}>
+      <div className={styled.backdrop} onClick={this.props.onClose}>
+        <div className={styled.modal} onClick={(e) => e.stopPropagation()}>
           <button onClick={this.props.onClose}>X</button>
 
           <h1 className={styled.title}>Залишити відгук</h1>
@@ -62,7 +62,7 @@ export class RewiewsModal extends Component {
               onChange={this.handleChange}
             ></textarea>
 
-            <button className={styled.button__submit}>Надіслати</button>
+            <button type="submit" className={styled.button__submit}>Надіслати</button>
           </form>
         </div>
       </div>
