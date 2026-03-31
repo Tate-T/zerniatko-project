@@ -2,135 +2,196 @@
   background-color: #fff9e5;
   min-height: 100vh;
   padding: 40px 0;
-  font-family: sans-serif;
 }
 
 .catalog__title {
   font-size: 48px;
   font-weight: 700;
   margin-bottom: 40px;
-  color: #000;
 }
 
 .catalog__layout {
-  display: grid;
-  grid-template-columns: 350px 1fr;
-  gap: 40px;
-}
-
-.filters {
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
 
-.filter_group {
+.filters {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 40px;
+}
+
+.filter_section {
+  display: flex;
+  flex-direction: column;
 }
 
 .filter_header {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  padding-bottom: 10px;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .filter_header h3 {
-  font-size: 24px;
-  font-weight: 600;
+  font-size: 32px;
+  font-weight: 800;
   margin: 0;
 }
 
-.filter_header button {
+.clear_btn {
   background: none;
   border: none;
-  color: #333;
+  font-size: 16px;
   cursor: pointer;
-  font-size: 14px;
   text-decoration: none;
+  color: #000;
 }
 
 .count_info {
-  font-size: 14px;
-  color: #666;
-  margin: 0;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.mobile_accordion {
+  position: relative;
+}
+
+.accordion_trigger {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  font-size: 18px;
+  background: transparent;
 }
 
 .category_nav {
-  display: flex;
+  display: none;
   flex-direction: column;
-  gap: 12px;
+  background-color: #fff9e5;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-top: none;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  max-height: 400px;
+  overflow-y: auto;
 }
 
-.category_nav button {
+.category_nav.is_open {
+  display: flex;
+}
+
+.cat_button {
   background: none;
   border: none;
+  padding: 12px 16px;
   text-align: left;
-  padding: 0;
-  font-size: 18px;
-  color: #333;
+  font-size: 20px;
   cursor: pointer;
-  transition: all 0.2s;
+  border-bottom: 3px solid transparent;
+  width: fit-content;
 }
 
 .active_cat {
   font-weight: 700;
-  text-decoration: underline;
-  text-underline-offset: 4px;
 }
 
 .brand_list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 16px;
 }
 
 .brand_item {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 18px;
+  gap: 15px;
+  font-size: 20px;
   cursor: pointer;
 }
 
-.brand_item input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
-  appearance: none;
-  border: 1px solid #ccc;
+.brand_item input {
+  display: none;
+}
+
+.checkmark {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #000;
   border-radius: 4px;
-  background-color: #fff;
-  cursor: pointer;
   position: relative;
 }
 
-.brand_item input[type="checkbox"]:checked {
-  background-color: #f8d7da;
-  border-color: #f5b7b1;
+.brand_item input:checked ~ .checkmark {
+  background-color: #000;
 }
 
-.brand_item input[type="checkbox"]:checked::after {
-  content: "✓";
+.brand_item input:checked ~ .checkmark::after {
+  content: "";
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 14px;
-  color: #333;
+  left: 7px;
+  top: 3px;
+  width: 6px;
+  height: 11px;
+  border: solid white;
+  border-width: 0 2.5px 2.5px 0;
+  transform: rotate(45deg);
+}
+
+.price_slider_container {
+  padding: 10px 5px;
 }
 
 .price_labels {
   display: flex;
   justify-content: space-between;
-  font-size: 18px;
-  margin-top: 5px;
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: 700;
 }
 
-input[type="range"] {
-  width: 100%;
-  cursor: pointer;
-  accent-color: #000;
+.desktop_filters {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .catalog__layout {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 60px;
+  }
+
+  .accordion_trigger {
+    display: none;
+  }
+
+  .category_nav {
+    display: flex;
+    position: static;
+    border: none;
+    max-height: none;
+    gap: 15px;
+  }
+
+  .desktop_filters {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .products_grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .products_grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
