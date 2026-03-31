@@ -1,109 +1,130 @@
-import React, { useState } from "react";
+import React from "react";
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
+import ProductsList from "../../components/ProductsList/ProductsList";
+import { Container } from "../../components/Container/ContainerLayout.jsx";
 import style from "./ProductsPage.module.css";
 
-const CATEGORIES = [
-  "Усі", "Кава в зернах", "Мелена кава", "Кавоварки та аксесуари", 
-  "Гаджети для бариста", "Чашки та термоси", "Фільтри та витратні матеріали",
-  "Капсульна кава", "Розчинна кава", "Сиропи та добавки", 
-  "Подарункові набори", "Зберігання кави", "Печиво та солодощі до кави"
-];
-
-const BRANDS = ["Lavazza", "Illy", "Bialetti", "Hario", "Timemore", "Svit Kavy", "Foundation Coffee Roasters"];
-
 export default function ProductsPage() {
-  const [activeCategory, setActiveCategory] = useState("Усі");
-  const [selectedBrands, setSelectedBrands] = useState([]);
-  const [priceRange, setPriceRange] = useState([0, 5000]);
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleBrand = (brand) => {
-    setSelectedBrands(prev => prev.includes(brand) ? prev.filter(b => b !== brand) : [...prev, brand]);
-  };
-
-  const sliderStyles = {
-    rail: { backgroundColor: 'rgba(0, 0, 0, 0.1)', height: 2 },
-    track: [{ backgroundColor: '#000000', height: 2 }],
-    handle: [
-      { backgroundColor: '#ffffff', borderColor: '#000000', width: 14, height: 14, marginTop: -6, boxShadow: '0 2px 4px rgba(0,0,0,0.2)', opacity: 1 },
-      { backgroundColor: '#ffffff', borderColor: '#000000', width: 14, height: 14, marginTop: -6, boxShadow: '0 2px 4px rgba(0,0,0,0.2)', opacity: 1 }
-    ]
-  };
-
   return (
-    <main className={style.catalog}>
-      <div className={style.container}>
-        <h1 className={style.catalog__title}>Всі товари</h1>
-        <div className={style.catalog__layout}>
-          <aside className={style.filters}>
-            
-            {/* Секція Категорій */}
-            <div className={style.filter_section}>
-              <div className={style.filter_header}>
-                <h3>Фільтри</h3>
-                <button className={style.clear_btn} onClick={() => {setActiveCategory("Усі"); setSelectedBrands([]); setPriceRange([0, 5000]);}}>Очистити всі</button>
-              </div>
+    <>
+      <Header />
+      <main className={style.catalog}>
+        <Container>
+          <h1 className={style.catalog__title}>Всі товари</h1>
+          <div className={style.catalog__layout}>
+            <aside className={style.filters}>
               
-              <div className={style.mobile_accordion}>
-                <div className={`${style.accordion_trigger} ${isOpen ? style.trigger_active : ""}`} onClick={() => setIsOpen(!isOpen)}>
-                  <span>{activeCategory}</span>
-                  <span>{isOpen ? "▲" : "▼"}</span>
-                </div>
-                <nav className={`${style.category_nav} ${isOpen ? style.is_open : ""}`}>
-                  {CATEGORIES.map(cat => (
-                    <button 
-                      key={cat} 
-                      className={`${style.cat_button} ${activeCategory === cat ? style.active_cat : ""}`}
-                      onClick={() => {setActiveCategory(cat); setIsOpen(false);}}
-                    >
-                      {cat}
-                    </button>
-                  ))}
-                </nav>
-              </div>
-            </div>
-
-            {/* Десктопні фільтри (Бренд та Ціна) */}
-            <div className={style.desktop_filters}>
-              <div className={style.filter_section}>
+              {/* Секція Категорій */}
+              <div className={style.filter_group}>
                 <div className={style.filter_header}>
-                  <h3>Бренд</h3>
-                  <button className={style.clear_btn} onClick={() => setSelectedBrands([])}>Очистити</button>
+                  <h3>Фільтри</h3>
+                  <button className={style.clear_btn}>Очистити всі</button>
+                </div>
+                <p className={style.count_info}>Показано 5 з 100</p>
+                
+                <div className={style.mobile_accordion}>
+                  <div className={style.accordion_trigger}>
+                    <span>Усі</span>
+                    <span className={style.arrow}>▼</span>
+                  </div>
+                  <nav className={style.category_nav}>
+                    <button className={`${style.cat_button} ${style.active_cat}`}>Усі</button>
+                    <button className={style.cat_button}>Кава у зернах</button>
+                    <button className={style.cat_button}>Мелена кава</button>
+                    <button className={style.cat_button}>Кавоварки та аксесуари</button>
+                    <button className={style.cat_button}>Гаджети для бариста</button>
+                    <button className={style.cat_button}>Чашки та термоси</button>
+                    <button className={style.cat_button}>Фільтри та витратні матеріали</button>
+                    <button className={style.cat_button}>Капсульна кава</button>
+                    <button className={style.cat_button}>Розчинна кава</button>
+                    <button className={style.cat_button}>Сиропи та добавки</button>
+                    <button className={style.cat_button}>Подарункові набори</button>
+                    <button className={style.cat_button}>Зберігання кави</button>
+                    <button className={style.cat_button}>Печиво та солодощі до кави</button>
+                  </nav>
+                </div>
+              </div>
+
+              {/* Секція Брендів */}
+              <div className={`${style.filter_group} ${style.desktop_only_filter}`}>
+                <div className={style.filter_header}>
+                  <h3>Бренд/Виробник</h3>
+                  <button className={style.clear_btn}>Очистити</button>
                 </div>
                 <div className={style.brand_list}>
-                  {BRANDS.map(brand => (
-                    <label key={brand} className={style.brand_item}>
-                      <input type="checkbox" checked={selectedBrands.includes(brand)} onChange={() => toggleBrand(brand)} />
-                      <span className={style.checkmark}></span>
-                      <span>{brand}</span>
-                    </label>
-                  ))}
+                  <label className={style.brand_item}>
+                    <input type="checkbox" readOnly />
+                    <span className={style.checkmark}></span>
+                    <span>Lavazza</span>
+                  </label>
+                  <label className={style.brand_item}>
+                    <input type="checkbox" readOnly />
+                    <span className={style.checkmark}></span>
+                    <span>Illy</span>
+                  </label>
+                  <label className={style.brand_item}>
+                    <input type="checkbox" readOnly />
+                    <span className={style.checkmark}></span>
+                    <span>Bialetti</span>
+                  </label>
+                  <label className={style.brand_item}>
+                    <input type="checkbox" readOnly />
+                    <span className={style.checkmark}></span>
+                    <span>Hario</span>
+                  </label>
+                  <label className={style.brand_item}>
+                    <input type="checkbox" readOnly />
+                    <span className={style.checkmark}></span>
+                    <span>Timemore</span>
+                  </label>
+                  <label className={style.brand_item}>
+                    <input type="checkbox" readOnly />
+                    <span className={style.checkmark}></span>
+                    <span>Svit Kavy</span>
+                  </label>
+                  <label className={style.brand_item}>
+                    <input type="checkbox" readOnly />
+                    <span className={style.checkmark}></span>
+                    <span>Foundation Coffee Roasters</span>
+                  </label>
+                  <label className={style.brand_item}>
+                    <input type="checkbox" readOnly />
+                    <span className={style.checkmark}></span>
+                    <span>Rocket Espresso</span>
+                  </label>
                 </div>
               </div>
 
-              <div className={style.filter_section}>
+              {/* Секція Ціни */}
+              <div className={`${style.filter_group} ${style.desktop_only_filter}`}>
                 <div className={style.filter_header}>
                   <h3>Ціна</h3>
-                  <button className={style.clear_btn} onClick={() => setPriceRange([0, 5000])}>Очистити</button>
+                  <button className={style.clear_btn}>Очистити</button>
                 </div>
                 <div className={style.price_slider_container}>
-                  <Slider range min={0} max={5000} value={priceRange} onChange={setPriceRange} railStyle={sliderStyles.rail} trackStyle={sliderStyles.track} handleStyle={sliderStyles.handle} />
+                  <Slider range min={0} max={5000} defaultValue={[0, 5000]} />
                   <div className={style.price_labels}>
-                    <span>{priceRange[0]}</span>
-                    <span>{priceRange[1]}</span>
+                    <span>0</span>
+                    <span>5000</span>
                   </div>
                 </div>
               </div>
-            </div>
-          </aside>
+            </aside>
 
-
-          <section className={style.products_grid}>
-  
-          </section>
-        </div>
-      </div>
-    </main>
+            <section className={style.products_grid}>
+             
+              <ProductsList products={[
+                { id: 1, name: "Еспресо Класік", category: "Кава у зернах", brand: "Lavazza", price: 280 },
+                { id: 2, name: "Ефіопія Сідамо", category: "Кава у зернах", brand: "Svit Kavy", price: 340 }
+              ]} />
+            </section>
+          </div>
+        </Container>
+      </main>
+      <Footer />
+    </>
   );
 }
