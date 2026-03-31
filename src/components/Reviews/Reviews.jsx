@@ -1,4 +1,4 @@
-import React, { Component, createRef } from "react";
+import { Component, createRef } from "react";
 import reviewsStar from "../../images/review-star.svg";
 import categorieArrow from "../../images/arrow.png";
 import { Container } from "../Container/ContainerLayout.jsx";
@@ -8,6 +8,28 @@ import { RewiewsModal } from "./modalRewiews";
 export class Rewiews extends Component {
   state = {
     modal: false,
+    reviews: [
+      {
+        text: "Дуже сподобалася ця кава! Смак насичений, з легкою гірчинкою й ароматом шоколаду. Ідеально підходить для ранкового еспресо.",
+        name: "Олена Коваль",
+        product: "Еспресо Класік",
+      },
+      {
+        text: "Френч-прес якісний і зручний у використанні. Скло міцне, фільтр добре працює, кава виходить ароматною й чистою. Точно вартий своєї ціни.",
+        name: "Ігор Петров",
+        product: "Френч-прес Classic 600 мл",
+      },
+      {
+        text: "Купив для роботи — тримає тепло кілька годин, дизайн мінімалістичний і стильний. Дуже зручно брати з собою каву в дорогу.",
+        name: "Ігор Шевченко",
+        product: "Термочашка Зернятко 350 мл",
+      },
+      {
+        text: "Чудовий сервіс і швидка доставка. Кава свіжа, ароматна, добре обсмажена. Обов’язково замовлю ще раз.",
+        name: "Марія Іваненко",
+        product: "Арабіка Преміум",
+      },
+    ],
   };
 
   reviewsRef = createRef();
@@ -18,28 +40,11 @@ export class Rewiews extends Component {
     }));
   };
 
-  reviews = [
-    {
-      text: "Дуже сподобалася ця кава! Смак насичений, з легкою гірчинкою й ароматом шоколаду. Ідеально підходить для ранкового еспресо.",
-      name: "Олена Коваль",
-      product: "Еспресо Класік",
-    },
-    {
-      text: "Френч-прес якісний і зручний у використанні. Скло міцне, фільтр добре працює, кава виходить ароматною й чистою. Точно вартий своєї ціни.",
-      name: "Ігор Петров",
-      product: "Френч-прес Classic 600 мл",
-    },
-    {
-      text: "Купив для роботи — тримає тепло кілька годин, дизайн мінімалістичний і стильний. Дуже зручно брати з собою каву в дорогу.",
-      name: "Ігор Шевченко",
-      product: "Термочашка Зернятко 350 мл",
-    },
-    {
-      text: "Чудовий сервіс і швидка доставка. Кава свіжа, ароматна, добре обсмажена. Обов’язково замовлю ще раз.",
-      name: "Марія Іваненко",
-      product: "Арабіка Преміум",
-    },
-  ];
+  addReview = (newReview) => {
+    this.setState((previousState) => ({
+      reviews: [newReview, ...previousState.reviews],
+    }));
+  };
 
   nextSlide = () => {
     const container = this.reviewsRef.current;
@@ -71,15 +76,21 @@ export class Rewiews extends Component {
         <Container>
           <div className={styles.headTitle}>
             <h2 className={styles.sectionTitle}>Останні відгуки</h2>
+
             <button onClick={this.modModal} className={styles.write_review}>
               Залишити відгук
             </button>
           </div>
 
-          {this.state.modal && <RewiewsModal onClose={this.modModal} />}
+          {this.state.modal && (
+            <RewiewsModal
+              onClose={this.modModal}
+              onAddReview={this.addReview}
+            />
+          )}
 
           <ul className={styles.reviewsList} ref={this.reviewsRef}>
-            {this.reviews.map((review, index) => (
+            {this.state.reviews.map((review, index) => (
               <li key={index} className={styles.reviewCard}>
                 <div className={styles.stars}>
                   {[...Array(5)].map((_, i) => (
