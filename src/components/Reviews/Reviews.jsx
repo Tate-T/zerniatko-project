@@ -8,7 +8,7 @@ import { RewiewsModal } from "./modalRewiews";
 export class Rewiews extends Component {
   state = {
     modal: false,
-    reviews: [
+    reviews: JSON.parse(localStorage.getItem("reviews")) || [
       {
         text: "Дуже сподобалася ця кава! Смак насичений, з легкою гірчинкою й ароматом шоколаду. Ідеально підходить для ранкового еспресо.",
         name: "Олена Коваль",
@@ -41,9 +41,15 @@ export class Rewiews extends Component {
   };
 
   addReview = (newReview) => {
-    this.setState((previousState) => ({
-      reviews: [newReview, ...previousState.reviews],
-    }));
+    this.setState((previousState) => {
+      const updatedReviews = [newReview, ...previousState.reviews];
+
+      localStorage.setItem("reviews", JSON.stringify(updatedReviews));
+
+      return {
+        reviews: updatedReviews,
+      };
+    });
   };
 
   nextSlide = () => {
