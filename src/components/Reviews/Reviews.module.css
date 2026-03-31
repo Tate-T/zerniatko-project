@@ -48,6 +48,7 @@
   padding: 24px 0;
   border-radius: 12px;
   font-family: "Inter", sans-serif;
+  overflow: hidden;
 }
 
 .stars {
@@ -64,10 +65,11 @@
 .reviewText {
   font-weight: 700;
   font-size: 15px;
-  line-height: 1.6;
+  line-height: 1.4;
   color: #333333;
   margin-bottom: 30px;
-  flex-grow: 1;
+  white-space: normal;
+  overflow-wrap: break-word;
 }
 
 .reviewerName {
