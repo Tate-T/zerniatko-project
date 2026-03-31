@@ -1,13 +1,19 @@
 .catalog {
   background-color: #fff9e5;
   min-height: 100vh;
-  padding: 40px 0;
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .catalog__title {
   font-size: 48px;
   font-weight: 700;
   margin-bottom: 40px;
+  color: #000;
 }
 
 .catalog__layout {
@@ -45,15 +51,15 @@
   border: none;
   font-size: 16px;
   cursor: pointer;
-  text-decoration: none;
   color: #000;
+  opacity: 0.6;
 }
 
-.count_info {
-  font-size: 18px;
-  margin-bottom: 20px;
+.clear_btn:hover {
+  opacity: 1;
 }
 
+/* Мобільний селект */
 .mobile_accordion {
   position: relative;
 }
@@ -66,6 +72,7 @@
   border-radius: 8px;
   font-size: 18px;
   background: transparent;
+  cursor: pointer;
 }
 
 .category_nav {
@@ -100,6 +107,7 @@
   font-weight: 700;
 }
 
+/* Чекбокси */
 .brand_list {
   display: flex;
   flex-direction: column;
@@ -170,7 +178,7 @@
   }
 
   .category_nav {
-    display: flex;
+    display: flex !important;
     position: static;
     border: none;
     max-height: none;
@@ -181,17 +189,5 @@
     display: flex;
     flex-direction: column;
     gap: 50px;
-  }
-
-  .products_grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .products_grid {
-    grid-template-columns: repeat(3, 1fr);
   }
 }
