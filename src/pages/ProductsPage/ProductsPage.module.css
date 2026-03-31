@@ -134,9 +134,3 @@ input[type="range"] {
   cursor: pointer;
   accent-color: #000;
 }
-
-.products_grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
-}
