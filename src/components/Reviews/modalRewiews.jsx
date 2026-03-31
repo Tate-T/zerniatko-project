@@ -62,7 +62,9 @@ export class RewiewsModal extends Component {
               onChange={this.handleChange}
             ></textarea>
 
-            <button type="submit" className={styled.button__submit}>Надіслати</button>
+            <button type="submit" className={styled.button__submit}>
+              Надіслати
+            </button>
           </form>
         </div>
       </div>
