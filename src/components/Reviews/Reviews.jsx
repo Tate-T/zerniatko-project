@@ -52,6 +52,16 @@ export class Rewiews extends Component {
     });
   };
 
+  deleteReview = (indexToDelete) => {
+    this.setState((previousState) => {
+      const updatedReviews = previousState.reviews.filter(
+        (_, index) => index !== indexToDelete,
+      );
+      localStorage.setItem("reviews", JSON.stringify(updatedReviews));
+      return { reviews: updatedReviews };
+    });
+  };
+
   nextSlide = () => {
     const container = this.reviewsRef.current;
     const cardWidth = 320 + 73;
@@ -98,10 +108,19 @@ export class Rewiews extends Component {
           <ul className={styles.reviewsList} ref={this.reviewsRef}>
             {this.state.reviews.map((review, index) => (
               <li key={index} className={styles.reviewCard}>
-                <div className={styles.stars}>
-                  {[...Array(5)].map((_, i) => (
-                    <img key={i} src={reviewsStar} alt="star" />
-                  ))}
+                <div className={styles.reviewCardHeader}>
+                  <div className={styles.stars}>
+                    {[...Array(5)].map((_, i) => (
+                      <img key={i} src={reviewsStar} alt="star" />
+                    ))}
+                  </div>
+
+                  <button
+                    onClick={() => this.deleteReview(index)}
+                    className={styles.deleteBtn}
+                  >
+                    Видалити
+                  </button>
                 </div>
 
                 <p className={styles.reviewText}>{review.text}</p>
