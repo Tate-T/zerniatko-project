@@ -1,26 +1,32 @@
-import React from "react";
-import { Container } from "../Container/ContainerLayout.jsx";
+import StarIcon from "../../images/review-star.svg";
 import styles from "./ProductsItem.module.css";
 
-export default function ProductsItem() {
+export default function ProductsItem({ product }) {
   return (
     <li className={styles.item}>
       <article>
         <div className={styles.imageWrapper}>
-          <img src="" alt="" className={styles.image} />
+          <img
+            src={product.image}
+            alt={product.name}
+            className={styles.image}
+          />
         </div>
 
         <div className={styles.content}>
-          <span className={styles.rating}></span>
+          <span className={styles.stars}>
+            <img src={StarIcon} alt="star" className={styles.starIcon} />
+            <img src={StarIcon} alt="star" className={styles.starIcon} />
+            <img src={StarIcon} alt="star" className={styles.starIcon} />
+            <img src={StarIcon} alt="star" className={styles.starIcon} />
+            <img src={StarIcon} alt="star" className={styles.starIcon} />
+          </span>
 
-          <h3 className={styles.name}>Еспресо Класік</h3>
+          <h3 className={styles.name}>{product.name}</h3>
 
-          <p className={styles.description}>
-            Суміш арабіки та робусти з насиченим смаком і нотами темного
-            шоколаду.
-          </p>
+          <p className={styles.description}>{product.description}</p>
 
-          <span className={styles.price}>280грн</span>
+          <span className={styles.price}>{product.price} грн</span>
         </div>
 
         <a href="#" className={styles.link}>
