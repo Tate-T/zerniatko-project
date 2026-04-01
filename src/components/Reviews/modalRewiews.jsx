@@ -23,7 +23,7 @@ export class RewiewsModal extends Component {
     const newReview = {
       name: this.state.name,
       text: this.state.text,
-      product: "Це новий товар",
+      product: "Товар Зернятко",
     };
 
     this.props.onAddReview(newReview);
