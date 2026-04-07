@@ -1,12 +1,12 @@
 import SignHeader from "../../components/SignMenu/SignHeader";
-import {RegisterMenu} from "../../components/SignMenu/RegisterMenu/RegisterMenu";
+import {LoginMenu} from "../../components/SignMenu/LoginMenu/LoginMenu";
 import SignFooter from "../../components/SignMenu/SignFooter";
 
-export default function RegisterPage() {
+export default function LoginPage() {
   return (
     <>
       <SignHeader />
-      <RegisterMenu />
+      <LoginMenu />
       <SignFooter />
     </>
   );

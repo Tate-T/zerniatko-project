@@ -6,6 +6,7 @@ import MainPage from "./pages/MainPage/MainPage";
 import CategoriePage from "./pages/СategoriesPage/CategoriesPage";
 import ProductsPage from "./pages/ProductsPage/ProductsPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
+import LoginPage from "./pages/LoginPage/LoginPage";
 function App() {
   return (
     <>
@@ -13,6 +14,7 @@ function App() {
       <CategoriePage />
       <ProductsPage />
       <RegisterPage />
+      <LoginPage />
     </>
   );
 }
