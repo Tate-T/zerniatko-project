@@ -1,19 +1,12 @@
-import style from "./RegisterMenu.module.css";
+import style from "./LoginMenu.module.css";
 import { Component } from "react";
 import users from "../../../data/users.json";
 
-export class RegisterMenu extends Component {
+export class LoginMenu extends Component {
   user = {}
   state = {
-    name: "",
     phone: "",
     password: ""
-  };
-
-  nameChange = (e) => {
-    this.setState({
-      name: e.target.value
-    });
   };
 
   phoneChange = (e) => {
@@ -30,18 +23,17 @@ export class RegisterMenu extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    if (this.state.name.length >= 3 && this.state.phone.includes("+380") && this.state.phone.length === 13 && this.state.password.length >= 8) {
-      if (!users.find(u => u.phone === this.state.phone)) {
+    if (this.state.phone.includes("+380") && this.state.phone.length === 13 && this.state.password.length >= 8) {
+      if (users.find(u => u.phone === this.state.phone) && users.find(u => u.password === this.state.password)) {
         this.user = {...this.state};
-        users.push(this.user);
         this.setState({
-          name: "",
           phone: "",
           password: "",
         });
-        console.log(users);
+        alert("Успішно!");
+        console.log("Успішно!");
       } else {
-        alert("Такий користувач вже існує. Увійдіть в акаунт.");
+        alert("Такого користувача не існує або дані вказані невірно.");
       }
     } else {
       alert("Помилка. Невiрний формат даних.");
@@ -54,15 +46,11 @@ export class RegisterMenu extends Component {
         <div className={style.container}>
           <div className={style.form_container}>
             <ul className={style.choose_sign}>
-              <li><button style={{borderBottom: "1px solid gray"}}>Реєстрація</button></li>
-              <li><button>Вхід</button></li>
+              <li><button>Реєстрація</button></li>
+              <li><button style={{borderBottom: "1px solid gray"}}>Вхід</button></li>
             </ul>
             <form className={style.sign_form} onSubmit={this.onSubmit}>
-              <h2>Реєстрація</h2>
-              <div>
-                <p>Імʼя*</p>
-                <input placeholder="Ваше ім’я" type="text" onChange={this.nameChange} value={this.state.name}></input>
-              </div>
+              <h2>Вхід</h2>
               <div>
                 <p>Номер телефону*</p>
                 <input placeholder="+38 (0__) ___-__-__" type="tel" onChange={this.phoneChange} value={this.state.phone}></input>
@@ -71,7 +59,7 @@ export class RegisterMenu extends Component {
                 <p>Пароль*</p>
                 <input placeholder="********" type="password" onChange={this.passChange} value={this.state.password}></input>
               </div>
-              <button className={style.submit_button} type="submit">Зареєструватися</button>
+              <button className={style.submit_button} type="submit">Увійти</button>
             </form>
           </div>
         </div>
